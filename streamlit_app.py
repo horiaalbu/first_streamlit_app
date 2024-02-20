@@ -1,4 +1,4 @@
-import streamlit
+derimport streamlit
 
 streamlit.title('My Mom\'s New Healthy Dinner')
 
@@ -40,5 +40,5 @@ my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST")
 my_data_row = my_cur.fetchone()
-streamlit.text("The FRUIT_LOAD_LIST table contain:")
-streamlit.text(my_data_row)
+streamlit.header("The FRUIT_LOAD_LIST table contain:")
+streamlit.dataframe(my_data_row)
